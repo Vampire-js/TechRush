@@ -1,7 +1,7 @@
 # SoundSpace
 
 ### TODO
-- [ ] UI Design in Figma
+- [X] UI Design in Figma
 - [ ] Making the UI in HTML, CSS
 - [ ] MIDI file support using javascript
 - [ ] Music export option
