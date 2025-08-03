@@ -12,3 +12,24 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.container{
+    display: flex;
+    
+}
+
+.custom-btn {
+  height: 20rem;                
+  width: 5rem;                 
+  background-color: #f3f4f6;  
+  border-radius: 0.75rem;     
+  
+  border: 1px solid #e5e7eb;   
+  border-bottom: 12px solid #2F3446;
+
+  transition: all 0.2s ease;   
+}
+
+.custom-btn:hover {
+  border-bottom-width: 1px;    
+}
