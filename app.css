@@ -11,13 +11,21 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+
+  background: rgb(27, 27, 27);
+  }
 
 .container{
     display: flex;
-    
+    flex-direction: column;
+    padding: 20px;
+    background: rgb(21, 21, 21);
+    border-radius: 20px;
 }
 
+.keys{
+   display: flex;
+}
 .custom-btn {
   height: 20rem;                
   width: 5rem;                 
@@ -53,4 +61,25 @@ body{
 .black-key:active {
   background-color: #333;
   transform: translateY(2px);
+}
+
+
+.record{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+
+  background: rgb(25, 25, 25);
+  border: none;
+}
+
+.vol-up{
+  height:60px;
+  width: 60px;
+  background: black;
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

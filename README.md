@@ -24,4 +24,5 @@
 - Plane animation to share
 - Post export animations
 - Retro-vibe
-- 
+- Follow alongs
+- Demo
