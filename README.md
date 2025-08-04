@@ -17,3 +17,11 @@
 - UI designing (3 days, 2nd August)
 - UI dev (3 days, 5th August)
 - Music logic (remaining time)
+
+
+### Random ideas
+- Scrollable knob 
+- Plane animation to share
+- Post export animations
+- Retro-vibe
+- 
