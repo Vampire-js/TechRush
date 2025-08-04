@@ -33,3 +33,24 @@ body{
 .custom-btn:hover {
   border-bottom-width: 1px;    
 }
+
+
+.black-key {
+  width: 3rem;
+  height: 12rem;
+  background-color: black;
+  border: none;
+  /* border-radius: 0.4rem; */
+  border-bottom-left-radius: .4rem;
+  border-bottom-right-radius: .4rem;
+  margin-left: -1.5rem;
+  z-index: 2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.black-key:active {
+  background-color: #333;
+  transform: translateY(2px);
+}
