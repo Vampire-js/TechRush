@@ -1,9 +1,16 @@
+
+
+
 *{
     font-family: sans-serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
+.keys{
+   display: flex;
+}
+
 
 body{
     height: 100vh;
@@ -11,9 +18,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-
-  background: rgb(27, 27, 27);
-  }
+}
 
 .container{
     display: flex;
@@ -23,15 +28,16 @@ body{
     border-radius: 20px;
 }
 
-.keys{
-   display: flex;
+.alpha{
+  /* padding-bottom:30px; */
+  position:absolute;
 }
 .custom-btn {
   height: 20rem;                
   width: 5rem;                 
   background-color: #f3f4f6;  
-  border-radius: 0.75rem;     
-  
+  border-bottom-left-radius: 0.75rem;     
+  border-bottom-right-radius: 0.75rem; 
   border: 1px solid #e5e7eb;   
   border-bottom: 12px solid #2F3446;
 
@@ -42,12 +48,15 @@ body{
   border-bottom-width: 1px;    
 }
 
-
 .black-key {
   width: 3rem;
   height: 12rem;
-  background-color: black;
-  border: none;
+  background-color: rgb(50, 50, 50);
+  border-bottom:12px solid rgb(0, 0, 0);
+  border-left:0px solid rgb(0, 0, 0);
+  border-right:0px solid rgb(0, 0, 0);
+  /* border-width: 0px 6px 10px 6px; */
+  /* border-color: rgb(212, 10, 10); */
   /* border-radius: 0.4rem; */
   border-bottom-left-radius: .4rem;
   border-bottom-right-radius: .4rem;
@@ -58,10 +67,11 @@ body{
   transition: 0.2s ease;
 }
 
-.black-key:active {
-  background-color: #333;
+.black-key:hover {
+  background-color: #000000;
   transform: translateY(2px);
 }
+
 
 
 .record{
