@@ -6,6 +6,8 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+
+    font-family: Roboto;
 }
 .keys{
    display: flex;
@@ -84,8 +86,8 @@ body{
 }
 
 .vol-up{
-  height:60px;
-  width: 60px;
+  height:40px;
+  width: 40px;
   background: black;
   border-radius: 100%;
 
@@ -94,4 +96,21 @@ body{
   align-items: center;
 
   border: 0px solid red;
+}
+
+
+#knobs{
+  display: flex;
+}
+.knob-group{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.value{
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(119, 119, 119);
+  width: 100%;
+  text-align: center;
 }
