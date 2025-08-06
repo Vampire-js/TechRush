@@ -26,7 +26,7 @@ class Knob extends HTMLElement {
         this.render();
 
         const volBtn = this.shadowRoot.getElementById("vol-btn")
-const knobValue = this.shadowRoot.getElementById("value")
+        const knobValue = this.shadowRoot.getElementById("value")
 
         volBtn.onpointerdown = e => {
             isDragging = true
@@ -121,3 +121,10 @@ const knobValue = this.shadowRoot.getElementById("value")
 }
 
 customElements.define("ui-knob", Knob)
+
+let keys = document.querySelectorAll(".btn")
+
+keys.forEach(e => {
+    let note = e.dataset.note
+    console.log(note)
+})

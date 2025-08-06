@@ -1,0 +1,17 @@
+{
+  "name": "techrush",
+  "version": "1.0.0",
+  "description": "- [X] UI Design in Figma\r - [ ] Making the UI in HTML, CSS\r - [ ] Music file support in javascript\r - [ ] Music export option",
+  "main": "app.js",
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
