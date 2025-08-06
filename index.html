@@ -12,37 +12,39 @@
 </head>
 
 <body>
-<ui-knob></ui-knob>
-
     <div class="container">
         <div class="controls">
             <button class="record">
-                <img src="./assets/rec.svg" style="height: 15px; width: 15px;" alt="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+  <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
+</svg>
+
             </button>
             <div class="vol-buttons">
                 <div id="knobs">
                     
-                <ui-knob></ui-knob>
-                <ui-knob></ui-knob>
+                <ui-knob id="vol-knob"></ui-knob>
+                <!-- <ui-knob></ui-knob> -->
             
                 
                 </div>
             </div>
+
         </div>
         <div class="keys">
-            <button data-note="c" class="custom-btn btn">
+            <button data-key="a" data-note="c" class="custom-btn btn">
             </button>
-            <button data-note="c#"  class="black-key btn"></button>
-            <button data-note="d" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
-            <button data-note="d#" class="black-key"></button>
-            <button data-note="e" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
-            <button data-note="f" class="custom-btn btn"></button>
-            <button data-note="f#" class="black-key btn"></button>
-            <button data-note="g" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
-            <button data-note="g#" class="black-key btn"></button>
-            <button data-note="a" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
-            <button data-note="a#" class="black-key btn"></button>
-            <button data-note="b" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
+            <button data-key="w" data-note="c#"  class="black-key btn"></button>
+            <button data-key="s" data-note="d" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
+            <button data-key="e" data-note="d#" class="black-key btn"></button>
+            <button data-key="d" data-note="e" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
+            <button data-key="f" data-note="f" class="custom-btn btn"></button>
+            <button data-key="t" data-note="f#" class="black-key btn"></button>
+            <button data-key="g" data-note="g" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
+            <button data-key="y" data-note="g#" class="black-key btn"></button>
+            <button data-key="h" data-note="a" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
+            <button data-key="u" data-note="a#" class="black-key btn"></button>
+            <button data-key="j" data-note="b" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
 
         </div>
 
