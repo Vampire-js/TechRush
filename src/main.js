@@ -2,6 +2,14 @@ import * as Soundfont from 'soundfont-player';
 import { Knob } from './components/Knob';
 
 const audioContext = new AudioContext();
+const destination = audioContext.createMediaStreamDestination()
+let recorder = new MediaRecorder(destination.stream)
+let recordedChunks = []
+
+const Mixer = audioContext.createGain()
+Mixer.connect(destination)
+Mixer.connect(audioContext.destination)
+
 customElements.define("ui-knob", Knob);
 
 let keys = document.querySelectorAll(".btn");
@@ -18,7 +26,7 @@ keys.forEach(e => {
     }
 });
 
-Soundfont.instrument(audioContext, 'acoustic_grand_piano')
+Soundfont.instrument(audioContext, 'acoustic_grand_piano' , {destination:Mixer})
     .then(inst => {
         document.onkeydown = (pressedKey) => {
             console.log(pressedKey.key , keyToNote[pressedKey.key])
@@ -40,3 +48,31 @@ Soundfont.instrument(audioContext, 'acoustic_grand_piano')
             };
         });
     });
+
+
+    
+    recorder.ondataavailable = e => {
+  if (e.data.size > 0) recordedChunks.push(e.data);
+};
+
+recorder.onstop = () => {
+  const blob = new Blob(recordedChunks, { type: 'audio/webm' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'recording.webm';
+  a.click();
+};
+
+
+let startRec = document.getElementById("rec")
+let stopRec = document.getElementById("stop-rec")
+
+startRec.onclick = () => {
+  recordedChunks = [];
+  recorder.start();
+}
+
+stopRec.onclick = () => {
+recorder.stop()
+}
