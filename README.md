@@ -3,8 +3,8 @@
 ### TODO
 - [X] UI Design in Figma
 - [ ] Making the UI in HTML, CSS
-- [ ] Music file support in javascript
-- [ ] Music export option
+- [X] Music file support in javascript
+- [X] Music export option
 
 ### Features
 - Choosing instruments
