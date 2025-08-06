@@ -26,10 +26,12 @@ keys.forEach(e => {
     }
 });
 
-Soundfont.instrument(audioContext, 'acoustic_grand_piano' , {destination:Mixer})
+const instrumentToggle = document.getElementById("instrumentToggle")
+
+Soundfont.instrument(audioContext, 'acoustic_grand_piano', { destination: Mixer })
     .then(inst => {
         document.onkeydown = (pressedKey) => {
-            console.log(pressedKey.key , keyToNote[pressedKey.key])
+            console.log(pressedKey.key, keyToNote[pressedKey.key])
             const key = pressedKey.key.toLowerCase();
             const note = keyToNote[key];
             if (note) {
@@ -50,18 +52,46 @@ Soundfont.instrument(audioContext, 'acoustic_grand_piano' , {destination:Mixer})
     });
 
 
-    
-    recorder.ondataavailable = e => {
-  if (e.data.size > 0) recordedChunks.push(e.data);
+
+instrumentToggle.onchange = state => {
+
+
+    Soundfont.instrument(audioContext, (state.target.checked ? 'acoustic_grand_piano' : 'acoustic_guitar_steel'), { destination: Mixer })
+        .then(inst => {
+            document.onkeydown = (pressedKey) => {
+                console.log(pressedKey.key, keyToNote[pressedKey.key])
+                const key = pressedKey.key.toLowerCase();
+                const note = keyToNote[key];
+                if (note) {
+                    inst.play(`${note}${octave}`, audioContext.currentTime, {
+                        gain: volKnob.rotation / 100
+                    });
+                }
+            };
+
+            keys.forEach(e => {
+                const note = e.dataset.note.toUpperCase();
+                e.onclick = () => {
+                    inst.play(`${note}${octave}`, audioContext.currentTime, {
+                        gain: volKnob.rotation / 100
+                    });
+                };
+            });
+        });
+
+
+}
+recorder.ondataavailable = e => {
+    if (e.data.size > 0) recordedChunks.push(e.data);
 };
 
 recorder.onstop = () => {
-  const blob = new Blob(recordedChunks, { type: 'audio/webm' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'recording.webm';
-  a.click();
+    const blob = new Blob(recordedChunks, { type: 'audio/webm' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'recording.webm';
+    a.click();
 };
 
 
@@ -69,10 +99,11 @@ let startRec = document.getElementById("rec")
 let stopRec = document.getElementById("stop-rec")
 
 startRec.onclick = () => {
-  recordedChunks = [];
-  recorder.start();
+    recordedChunks = [];
+    recorder.start();
 }
 
 stopRec.onclick = () => {
-recorder.stop()
+    recorder.stop()
 }
+
