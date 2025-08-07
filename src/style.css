@@ -249,6 +249,23 @@ input:checked + .slider .piano {
   transition:0.4s ease;
 }
 
+.export-btn{
+   font-size:15px;
+    padding:5px; 
+    margin-top:5px;
+    
+  background-color: transparent;
+  background: red;
+width: 100%;
+  color: white;
+  border: none;
+  transition: 0.4s ease;
+  border-radius: 10px;
+}
+.export-btn:hover{
+  background-color: #595959;
+}
+
 #export-btn{
   height: 100%;
   width: 40px;
@@ -262,7 +279,7 @@ input:checked + .slider .piano {
   margin-left: 5px;
   transition:0.4s ease;
 }
-#rec:hover{
+/* #rec:hover{
   background: rgb(61, 61, 61);
 }
 #stop-rec:hover{
@@ -271,7 +288,7 @@ input:checked + .slider .piano {
 
 #export-btn:hover{
   background: rgb(61, 61, 61);
-}
+} */
 
 .controls{
 

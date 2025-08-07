@@ -111,6 +111,8 @@ recorder.ondataavailable = e => {
 
 const exportBtn = document.getElementById("export-btn")
 
+let isRecording = false
+
 recorder.onstop = () => {
     const blob = new Blob(recordedChunks, { type: 'audio/webm' });
     const url = URL.createObjectURL(blob);
@@ -123,23 +125,28 @@ recorder.onstop = () => {
 
 };
 
-exportBtn.onclick = () => {
-    
-}
+const startRec = document.getElementById("rec");
+const stopRec = document.getElementById("stop-rec");
 
-
-let startRec = document.getElementById("rec")
-let stopRec = document.getElementById("stop-rec")
+// Set initial button states
+startRec.disabled = false;
+stopRec.disabled = true;
 
 startRec.onclick = () => {
     recordedChunks = [];
-    alert("Recording has started")
     recorder.start();
-}
+    alert("Recording has started");
+
+    // Disable start, enable stop
+    startRec.disabled = true;
+    stopRec.disabled = false;
+};
 
 stopRec.onclick = () => {
-    alert("Recording has been stopped, please hit export to export the file.")
-    recorder.stop()
-    recordingCounts += 1
-}
+    alert("Recording has been stopped, please hit export to export the file.");
+    recorder.stop();
 
+    // Enable start, disable stop
+    startRec.disabled = false;
+    stopRec.disabled = true;
+};
