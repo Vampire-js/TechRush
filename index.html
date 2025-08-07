@@ -6,57 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>JoJo Music Player</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="controls">
-                   <button class="Toggle-baground">
+    <div class="container modebackground" id="container">
+        <div class="character-display">
+            <div class="character" id="giorno">
+                <div class="giorno-sprite giorno-idle" id="giorno-sprite">🎹</div>
+                <div class="character-name">Giorno Giovanna</div>
+            </div>
+            <div class="character" id="jotaro">
+                <div class="sprite-container jotaro-idle" id="jotaro-sprite"></div>
+                <div class="character-name">Jotaro Kujo</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="controls">
                 <label class="mode-switcher">
                     <input type="checkbox" id="instrumentToggle">
                     <span class="slider">
-                    <span class="guitar">🎸</span>
-                    <span class="piano">🎹</span>
-                </span>
+                        <span class="guitar">🎸</span>
+                        <span class="piano">🎹</span>
+                    </span>
                 </label>
-                </button>
-            <button id="rec">
-START RECORDING
-            </button>
-            <button id="stop-rec">STOP RECORDING</button>
-            <div class="vol-buttons">
-                <div id="knobs">
-                    
-                <ui-knob id="vol-knob"></ui-knob>
-                <!-- <ui-knob></ui-knob> -->
-            
-                
+                <div class="mode-text" id="modeText">Guitar Mode</div>
+
+                <button id="rec" class="record-btn">START RECORDING</button>
+                <button id="stop-rec" class="record-btn">STOP RECORDING</button>
+
+                <div class="vol-buttons">
+                    <div id="knobs">
+                        <ui-knob id="vol-knob"></ui-knob>
+                    </div>
                 </div>
             </div>
 
-        </div>
-        <div class="keys">
-            <button data-key="a" data-note="c" class="custom-btn btn">
-            </button>
-            <button data-key="w" data-note="c#"  class="black-key btn"></button>
-            <button data-key="s" data-note="d" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
-            <button data-key="e" data-note="d#" class="black-key btn"></button>
-            <button data-key="d" data-note="e" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
-            <button data-key="f" data-note="f" class="custom-btn btn"></button>
-            <button data-key="t" data-note="f#" class="black-key btn"></button>
-            <button data-key="g" data-note="g" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
-            <button data-key="y" data-note="g#" class="black-key btn"></button>
-            <button data-key="h" data-note="a" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
-            <button data-key="u" data-note="a#" class="black-key btn"></button>
-            <button data-key="j" data-note="b" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
-
+            <div class="keys">
+                <button data-key="a" data-note="c" class="custom-btn btn"></button>
+                <button data-key="w" data-note="c#" class="black-key btn"></button>
+                <button data-key="s" data-note="d" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
+                <button data-key="e" data-note="d#" class="black-key btn"></button>
+                <button data-key="d" data-note="e" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
+                <button data-key="f" data-note="f" class="custom-btn btn"></button>
+                <button data-key="t" data-note="f#" class="black-key btn"></button>
+                <button data-key="g" data-note="g" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
+                <button data-key="y" data-note="g#" class="black-key btn"></button>
+                <button data-key="h" data-note="a" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
+                <button data-key="u" data-note="a#" class="black-key btn"></button>
+                <button data-key="j" data-note="b" class="custom-btn btn" style="margin-left: -1.5rem;"></button>
+            </div>
         </div>
 
+        <div class="recordings-display">
+            <h3>🎵 Recordings</h3>
+            <div class="recordings-list" id="recordingsList">
+            </div>
+        </div>
     </div>
- <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>
