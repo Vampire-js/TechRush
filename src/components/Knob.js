@@ -1,6 +1,6 @@
 export class Knob extends HTMLElement {
     static get observedAttributes() {
-        return [];
+        return ['title'];
     }
 
     constructor() {
@@ -79,17 +79,27 @@ export class Knob extends HTMLElement {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  border-left:1px solid #444;
+  padding-left:10px;
+  padding-right:10px;
 }.value{
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 300;
-  color: rgb(119, 119, 119);
+  color: white;
   width: 100%;
   text-align: center;
 }
+  .btn-title{
+        text-align:center;
+        color:white;
+        font-size:10px;
+  }
 
         </style>
         <div class="knob-group">
+          <p class="btn-title">${title}</p>
        <button class="vol-up" id="vol-btn">
+     
                         <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="8" y="8" width="59" height="59" rx="29.5" fill="#151515"
                                 stroke="url(#paint0_linear_59_11)" stroke-width="16" />

@@ -13,7 +13,7 @@ Mixer.connect(audioContext.destination)
 customElements.define("ui-knob", Knob);
 
 let keys = document.querySelectorAll(".btn");
-let octave = 4;
+let octave = 6;
 let volKnob = document.getElementById("vol-knob");
 
 const keyToNote = {};
@@ -106,4 +106,6 @@ startRec.onclick = () => {
 stopRec.onclick = () => {
     recorder.stop()
 }
+
+
 
