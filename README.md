@@ -2,7 +2,7 @@
 
 ### TODO
 - [X] UI Design in Figma
-- [ ] Making the UI in HTML, CSS
+- [X] Making the UI in HTML, CSS
 - [X] Music file support in javascript
 - [X] Music export option
 
@@ -17,7 +17,6 @@
 - UI designing (3 days, 2nd August)
 - UI dev (3 days, 5th August)
 - Music logic (remaining time)
-
 
 ### Random ideas
 - Scrollable knob 
