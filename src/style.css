@@ -62,11 +62,27 @@ body{
   border-bottom: 12px solid #292929;
 
   transition: all 0.2s ease;   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
 }
 
 .custom-btn:hover {
   border-bottom-width: 1px;    
 }
+
+.keyNote{
+  margin: 5px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.311);
+}
+.keyNote-black{
+  margin: 5px;
+  font-size: 20px;
+  color: rgba(174, 174, 174, 0.311);
+}
+
 
 .black-key {
 width: 3rem;
@@ -90,6 +106,11 @@ width: 3rem;
   cursor: pointer;
   transition: 0.2s ease;
 
+
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
 }
 
 .black-key:hover {
